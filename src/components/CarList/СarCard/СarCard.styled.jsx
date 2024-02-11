@@ -17,27 +17,41 @@ export const StyledCard = styled.li`
   .card__content {
     .card__info {
       margin-bottom: 28px;
-    }
 
-    .card__btn {
-      width: 100%;
-      padding: 12px;
-      min-height: 44px;
+      .card__info-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
 
-      display: flex;
-      justify-content: center;
-      align-items: center;
+        margin-bottom: 8px;
 
-      background-color: #3470ff;
-      color: #fff;
-      border: none;
-      border-radius: 12px;
-      transition: 0.3s;
+        font-weight: 500;
 
-      &:hover,
-      &:focus {
-        background-color: #0b44cd;
+        .card__accent {
+          color: #3470ff;
+        }
       }
+    }
+  }
+
+  .card__btn {
+    width: 100%;
+    padding: 12px;
+    min-height: 44px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #3470ff;
+    color: #fff;
+    border: none;
+    border-radius: 12px;
+    transition: 0.3s;
+
+    &:hover,
+    &:focus {
+      background-color: #0b44cd;
     }
   }
 `;
