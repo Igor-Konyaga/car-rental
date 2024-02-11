@@ -1,8 +1,6 @@
-import { Link } from 'react-router-dom';
 import { StyledCard } from './СarCard.styled';
 
 export const CarCard = ({
-  id,
   year,
   make,
   model,
@@ -11,7 +9,8 @@ export const CarCard = ({
   rentalPrice,
   address,
   mileage,
-  functionalities,
+  engineSize,
+  rentalCompany,
 }) => {
   const arr = address.split(',');
 
@@ -30,7 +29,17 @@ export const CarCard = ({
             <p>{rentalPrice}</p>
           </div>
 
-          <div className="card__info-footer">{arr[1]}</div>
+          <div className="card__info-footer">
+            <ul>
+              <li className="mod-padding">{arr[1]}</li>
+              <li>{arr[2]}</li>
+              <li>{rentalCompany}</li>
+              <li className="mod-border">{type}</li>
+              <li className="mod-padding">{model}</li>
+              <li>{mileage}</li>
+              <li className="mod-border">{engineSize}</li>
+            </ul>
+          </div>
         </div>
         <button type="button" className="card__btn">
           Learn more

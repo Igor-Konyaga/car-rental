@@ -3,9 +3,9 @@ import { AllCar } from '../../../services/carApi';
 
 export const fetchAllCar = createAsyncThunk(
   'car/getAll',
-  async (params, thunkAPI) => {
+  async (page, thunkAPI) => {
     try {
-      const carList = await AllCar(params.page, params.limit);
+      const carList = await AllCar(page, 4);
 
       return carList;
     } catch (error) {
@@ -31,7 +31,7 @@ const carSlice = createSlice({
       })
       .addCase(fetchAllCar.fulfilled, (state, action) => {
         state.isLoading = false;
-        state.carList = action.payload;
+        state.carList = [...state.carList, ...action.payload];
       })
       .addCase(fetchAllCar.rejected, (state, action) => {
         state.isLoading = false;

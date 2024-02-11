@@ -31,6 +31,33 @@ export const StyledCard = styled.li`
           color: #3470ff;
         }
       }
+
+      .card__info-footer {
+        font-size: 12px;
+        font-weight: 400;
+        color: rgba(18, 20, 23, 0.5);
+
+        ul {
+          display: flex;
+          flex-wrap: wrap;
+
+			 row-gap: 4px;
+
+          li {
+            border-right: 1px solid rgba(18, 20, 23, 0.1);
+            padding: 3px 5px;
+
+            line-height: 1.2;
+          }
+
+          .mod-padding {
+            padding-left: 0;
+          }
+          .mod-border {
+            border-right: none;
+          }
+        }
+      }
     }
   }
 

@@ -1,8 +1,8 @@
 import { StyledBtn } from './Button.styled';
 
-export const Button = ({ children, center }) => {
+export const Button = ({ children, center, handleChangePage }) => {
   return (
-    <StyledBtn center={center} type="button">
+    <StyledBtn onClick={handleChangePage} center={center} type="button">
       {children}
     </StyledBtn>
   );
