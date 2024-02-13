@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 export const StyledCard = styled.li`
   flex-basis: calc(25% - 21px);
+  position: relative;
 
   .card__img-wrapper {
     margin-bottom: 14px;
@@ -41,20 +42,36 @@ export const StyledCard = styled.li`
           display: flex;
           flex-wrap: wrap;
 
-			 row-gap: 4px;
+          width: 100%;
+
+          row-gap: 7px;
+          column-gap: 14px;
 
           li {
-            border-right: 1px solid rgba(18, 20, 23, 0.1);
-            padding: 3px 5px;
-
+            position: relative;
             line-height: 1.2;
-          }
+            &::after {
+              content: '';
+              display: block;
+              width: 1px;
+              height: 16px;
+              position: absolute;
+              top: 0;
+              right: -7px;
 
-          .mod-padding {
-            padding-left: 0;
-          }
-          .mod-border {
-            border-right: none;
+              background-color: rgba(18, 20, 23, 0.1);
+            }
+
+            &:last-child {
+              &::after {
+                display: none;
+              }
+            }
+            &:nth-child(4) {
+              &::after {
+                display: none;
+              }
+            }
           }
         }
       }
@@ -79,6 +96,31 @@ export const StyledCard = styled.li`
     &:hover,
     &:focus {
       background-color: #0b44cd;
+      color: #fefacc;
+    }
+  }
+
+  .card__icon-btn {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+
+    padding: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border: none;
+    background-color: transparent;
+
+    .card__icon-heart {
+      fill: white;
+      width: 18px;
+      height: 18px;
+    }
+    .card__icon-heart-mod {
+      fill: #3470ff;
     }
   }
 `;

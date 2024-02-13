@@ -4,9 +4,9 @@ import { StyledNavigation } from './Navigation.styled';
 export const Navigation = () => {
   return (
     <StyledNavigation>
-      <NavLink to={'/home'}>Home</NavLink>
+      <NavLink to={'/'}>Home</NavLink>
       <NavLink to={'/catalog'}>Car park</NavLink>
-      <NavLink to={'/favorites'}>Favorite</NavLink>
+      <NavLink to={'/favorites'}>Favorites</NavLink>
     </StyledNavigation>
   );
 };

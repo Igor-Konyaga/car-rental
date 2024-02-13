@@ -5,7 +5,7 @@ export const fetchAllCar = createAsyncThunk(
   'car/getAll',
   async (page, thunkAPI) => {
     try {
-      const carList = await AllCar(page, 4);
+      const carList = await AllCar(page, 12);
 
       return carList;
     } catch (error) {

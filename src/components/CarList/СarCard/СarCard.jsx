@@ -1,4 +1,7 @@
+import { useState } from 'react';
 import { StyledCard } from './СarCard.styled';
+import { FaRegHeart } from 'react-icons/fa';
+import { FaHeart } from 'react-icons/fa';
 
 export const CarCard = ({
   year,
@@ -12,7 +15,11 @@ export const CarCard = ({
   engineSize,
   rentalCompany,
 }) => {
+  const [favorite, setFavorite] = useState(false);
+
   const arr = address.split(',');
+  const city = arr[1];
+  const country = arr[2];
 
   return (
     <StyledCard>
@@ -31,13 +38,13 @@ export const CarCard = ({
 
           <div className="card__info-footer">
             <ul>
-              <li className="mod-padding">{arr[1]}</li>
-              <li>{arr[2]}</li>
+              <li>{city}</li>
+              <li>{country}</li>
               <li>{rentalCompany}</li>
-              <li className="mod-border">{type}</li>
-              <li className="mod-padding">{model}</li>
+              <li>{type}</li>
+              <li>{model}</li>
               <li>{mileage}</li>
-              <li className="mod-border">{engineSize}</li>
+              <li>{engineSize}</li>
             </ul>
           </div>
         </div>
@@ -45,6 +52,17 @@ export const CarCard = ({
           Learn more
         </button>
       </div>
+      <button
+        onClick={() => setFavorite(!favorite)}
+        className="card__icon-btn"
+        type="button"
+      >
+        {favorite ? (
+          <FaHeart className="card__icon-heart card__icon-heart-mod" />
+        ) : (
+          <FaRegHeart className="card__icon-heart" />
+        )}
+      </button>
     </StyledCard>
   );
 };

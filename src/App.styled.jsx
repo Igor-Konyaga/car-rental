@@ -1,5 +1,4 @@
-import styled from '@emotion/styled';
-import 'normalize.css';
+import styled from 'styled-components';
 
 export const AppWrapper = styled.div`
   width: 100%;
