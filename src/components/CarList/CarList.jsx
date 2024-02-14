@@ -30,9 +30,11 @@ export const CarList = () => {
             return (
               <CarCard
                 key={car.id}
+                id={car.id}
                 year={car.year}
                 make={car.make}
                 type={car.type}
+                favorite={car.favorite}
                 img={car.img}
                 rentalPrice={car.rentalPrice}
                 address={car.address}

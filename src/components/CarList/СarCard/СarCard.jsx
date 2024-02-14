@@ -2,9 +2,16 @@ import { useState } from 'react';
 import { StyledCard } from './СarCard.styled';
 import { FaRegHeart } from 'react-icons/fa';
 import { FaHeart } from 'react-icons/fa';
+import { useDispatch } from 'react-redux';
+import {
+  addFavoriteCar,
+  deleteFavoriteCar,
+} from '../../../redux/car/carReducer';
 
 export const CarCard = ({
+  id,
   year,
+  favorite,
   make,
   model,
   type,
@@ -15,7 +22,34 @@ export const CarCard = ({
   engineSize,
   rentalCompany,
 }) => {
-  const [favorite, setFavorite] = useState(false);
+  const [isfavorite, setIsFavorite] = useState(false);
+
+  const dispatch = useDispatch();
+
+  const carData = {
+    id,
+    favorite: true,
+    year,
+    make,
+    model,
+    type,
+    img,
+    rentalPrice,
+    address,
+    mileage,
+    engineSize,
+    rentalCompany,
+  };
+
+  const handleAddCarFavotites = () => {
+    if (!isfavorite) {
+      setIsFavorite(true);
+      dispatch(addFavoriteCar(carData));
+      return;
+    }
+    dispatch(deleteFavoriteCar(carData.id));
+    setIsFavorite(false);
+  };
 
   const arr = address.split(',');
   const city = arr[1];
@@ -53,11 +87,11 @@ export const CarCard = ({
         </button>
       </div>
       <button
-        onClick={() => setFavorite(!favorite)}
+        onClick={handleAddCarFavotites}
         className="card__icon-btn"
         type="button"
       >
-        {favorite ? (
+        {isfavorite || favorite ? (
           <FaHeart className="card__icon-heart card__icon-heart-mod" />
         ) : (
           <FaRegHeart className="card__icon-heart" />
