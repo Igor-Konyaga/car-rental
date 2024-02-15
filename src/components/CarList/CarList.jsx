@@ -1,23 +1,17 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { StyledCarList } from './CarList.styled';
-import { carsData } from '../../redux/car/carSelectors';
-import { useEffect, useState } from 'react';
-import { fetchAllCar } from '../../redux/car/carReducer';
+import { carsData, favoriteCarsData } from '../../redux/car/carSelectors';
+import { setPage } from '../../redux/car/carReducer';
 import { CarCard } from './СarCard/СarCard';
 import { Button } from '../Button/Button';
 
-export const CarList = () => {
-  const [page, setPage] = useState(1);
+export const CarList = ({ favorite }) => {
   const dispatch = useDispatch();
 
-  const arrCars = useSelector(carsData);
-
-  useEffect(() => {
-    dispatch(fetchAllCar(page));
-  }, [dispatch, page]);
+  const arrCars = useSelector(favorite ? favoriteCarsData : carsData);
 
   const handleChangePage = () => {
-    setPage(page + 1);
+    dispatch(setPage());
   };
 
   const validArr = Array.isArray(arrCars) && arrCars.length > 0;
@@ -46,7 +40,14 @@ export const CarList = () => {
             );
           })}
       </StyledCarList>
-      <Button handleChangePage={handleChangePage}>Load more</Button>
+
+      {!favorite && (
+        <Button handleChangePage={handleChangePage}>Load more</Button>
+      )}
+
+      {favorite && arrCars.length === 0 && (
+        <p className="car-list__message">There are no selected cars</p>
+      )}
     </>
   );
 };

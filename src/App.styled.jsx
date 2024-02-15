@@ -20,3 +20,4 @@ export const AppContainer = styled.div`
     max-width: 1230px;
   }
 `;
+

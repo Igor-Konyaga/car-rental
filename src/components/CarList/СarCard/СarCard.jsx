@@ -7,6 +7,8 @@ import {
   addFavoriteCar,
   deleteFavoriteCar,
 } from '../../../redux/car/carReducer';
+import { Modal } from '../../Modal/Modal';
+import { ModalCar } from '../../Modal/ModalCar/ModalCar';
 
 export const CarCard = ({
   id,
@@ -23,6 +25,7 @@ export const CarCard = ({
   rentalCompany,
 }) => {
   const [isfavorite, setIsFavorite] = useState(false);
+  const [openModal, setOpenModal] = useState(false);
 
   const dispatch = useDispatch();
 
@@ -42,11 +45,12 @@ export const CarCard = ({
   };
 
   const handleAddCarFavotites = () => {
-    if (!isfavorite) {
+    if (!isfavorite && !favorite) {
       setIsFavorite(true);
       dispatch(addFavoriteCar(carData));
       return;
     }
+
     dispatch(deleteFavoriteCar(carData.id));
     setIsFavorite(false);
   };
@@ -82,7 +86,11 @@ export const CarCard = ({
             </ul>
           </div>
         </div>
-        <button type="button" className="card__btn">
+        <button
+          onClick={() => setOpenModal(true)}
+          type="button"
+          className="card__btn"
+        >
           Learn more
         </button>
       </div>
@@ -97,6 +105,12 @@ export const CarCard = ({
           <FaRegHeart className="card__icon-heart" />
         )}
       </button>
+
+      {openModal && (
+        <Modal openModal={openModal} setOpenModal={setOpenModal}>
+          <ModalCar carData={carData} />
+        </Modal>
+      )}
     </StyledCard>
   );
 };

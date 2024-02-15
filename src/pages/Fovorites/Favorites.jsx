@@ -1,3 +1,10 @@
+import { CarList } from '../../components/CarList/CarList';
+import { StyledPage } from '../Page.styled';
+
 export const Favorites = () => {
-  return <h2>Favourites</h2>;
+  return (
+    <StyledPage>
+      <CarList favorite />
+    </StyledPage>
+  );
 };

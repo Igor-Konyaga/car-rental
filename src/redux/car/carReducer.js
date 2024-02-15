@@ -17,6 +17,7 @@ export const fetchAllCar = createAsyncThunk(
 const INITIAL_STATE = {
   carList: [],
   favoriteCars: [],
+  page: 1,
   isLoading: false,
   error: null,
 };
@@ -33,6 +34,9 @@ const carSlice = createSlice({
         (car) => car.id !== action.payload
       );
     },
+    setPage(state) {
+      state.page = state.page + 1;
+    },
   },
   extraReducers: (builder) =>
     builder
@@ -43,13 +47,7 @@ const carSlice = createSlice({
       .addCase(fetchAllCar.fulfilled, (state, action) => {
         state.isLoading = false;
 
-        state.carList = [
-          ...new Set([
-            ...state.favoriteCars,
-            ...state.carList,
-            ...action.payload,
-          ]),
-        ];
+        state.carList = [...action.payload, ...state.carList];
       })
       .addCase(fetchAllCar.rejected, (state, action) => {
         state.isLoading = false;
@@ -59,5 +57,5 @@ const carSlice = createSlice({
 
 export const carReducer = carSlice.reducer;
 
-export const { addFavoriteCar, deleteFavoriteCar, setFavorite } =
+export const { addFavoriteCar, deleteFavoriteCar, setFavorite, setPage } =
   carSlice.actions;
