@@ -47,7 +47,7 @@ const carSlice = createSlice({
       .addCase(fetchAllCar.fulfilled, (state, action) => {
         state.isLoading = false;
 
-        state.carList = [...action.payload, ...state.carList];
+        state.carList = [...state.carList, ...action.payload];
       })
       .addCase(fetchAllCar.rejected, (state, action) => {
         state.isLoading = false;

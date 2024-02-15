@@ -15,11 +15,14 @@ export const StyledPage = styled.div`
 
     transform: translate(-50%, -50%);
 
-    font-size: 34px;
+    font-size: 40px;
     letter-spacing: 1px;
     word-spacing: 4px;
     font-weight: 600;
 
     color: #02428b;
+
+	 text-shadow: 2px 7px 5px rgba(0,0,0,0.3), 
+    0px -4px 10px rgba(255,255,255,0.3);
   }
 `;

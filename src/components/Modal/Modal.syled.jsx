@@ -10,7 +10,7 @@ export const StyledModal = styled.div`
 
   display: flex;
   justify-content: center;
-  align-items: center;
+  /* align-items: center; */
 
   z-index: 1;
   background-color: rgba(18, 20, 23, 0.5);

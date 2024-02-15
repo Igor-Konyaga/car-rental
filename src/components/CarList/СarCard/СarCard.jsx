@@ -10,44 +10,30 @@ import {
 import { Modal } from '../../Modal/Modal';
 import { ModalCar } from '../../Modal/ModalCar/ModalCar';
 
-export const CarCard = ({
-  id,
-  year,
-  favorite,
-  make,
-  model,
-  type,
-  img,
-  rentalPrice,
-  address,
-  mileage,
-  engineSize,
-  rentalCompany,
-}) => {
+export const CarCard = ({ carData }) => {
   const [isfavorite, setIsFavorite] = useState(false);
   const [openModal, setOpenModal] = useState(false);
 
   const dispatch = useDispatch();
 
-  const carData = {
-    id,
-    favorite: true,
-    year,
+  const {
+    favorite,
+    address,
+    img,
     make,
     model,
-    type,
-    img,
+    year,
     rentalPrice,
-    address,
+    rentalCompany,
+    type,
     mileage,
     engineSize,
-    rentalCompany,
-  };
+  } = carData;
 
   const handleAddCarFavotites = () => {
     if (!isfavorite && !favorite) {
       setIsFavorite(true);
-      dispatch(addFavoriteCar(carData));
+      dispatch(addFavoriteCar({ ...carData, favorite: true }));
       return;
     }
 
@@ -68,7 +54,7 @@ export const CarCard = ({
         <div className="card__info">
           <div className="card__info-header">
             <p>
-              {make} <span className="card__accent">{model}</span>,{' '}
+              {make} <span className="card__accent">{model}</span>,&nbsp;
               <span>{year}</span>
             </p>
             <p>{rentalPrice}</p>

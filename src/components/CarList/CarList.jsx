@@ -21,23 +21,7 @@ export const CarList = ({ favorite }) => {
       <StyledCarList>
         {validArr &&
           arrCars.map((car) => {
-            return (
-              <CarCard
-                key={car.id}
-                id={car.id}
-                year={car.year}
-                make={car.make}
-                type={car.type}
-                favorite={car.favorite}
-                img={car.img}
-                rentalPrice={car.rentalPrice}
-                address={car.address}
-                mileage={car.mileage}
-                engineSize={car.engineSize}
-                model={car.model}
-                rentalCompany={car.rentalCompany}
-              />
-            );
+            return <CarCard key={car.id} carData={car} />;
           })}
       </StyledCarList>
 
