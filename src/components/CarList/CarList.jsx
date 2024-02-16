@@ -5,10 +5,15 @@ import { setPage } from '../../redux/car/carReducer';
 import { CarCard } from './СarCard/СarCard';
 import { Button } from '../Button/Button';
 
-export const CarList = ({ favorite }) => {
+export const CarList = () => {
   const dispatch = useDispatch();
 
-  const arrCars = useSelector(favorite ? favoriteCarsData : carsData);
+  const arrCars = useSelector(carsData);
+  const favoriteCars = useSelector(favoriteCarsData);
+
+  const isFavoriteCar = (car) => {
+    return favoriteCars.some((favoriteCar) => favoriteCar.id === car.id);
+  };
 
   const handleChangePage = () => {
     dispatch(setPage());
@@ -21,17 +26,17 @@ export const CarList = ({ favorite }) => {
       <StyledCarList>
         {validArr &&
           arrCars.map((car) => {
-            return <CarCard key={car.id} carData={car} />;
+            return (
+              <CarCard
+                key={car.id}
+                carData={car}
+                favorite={isFavoriteCar(car)}
+              />
+            );
           })}
       </StyledCarList>
 
-      {!favorite && (
-        <Button handleChangePage={handleChangePage}>Load more</Button>
-      )}
-
-      {favorite && arrCars.length === 0 && (
-        <p className="car-list__message">There are no selected cars</p>
-      )}
+      <Button handleChangePage={handleChangePage}>Load more</Button>
     </>
   );
 };

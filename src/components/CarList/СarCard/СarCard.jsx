@@ -10,14 +10,11 @@ import {
 import { Modal } from '../../Modal/Modal';
 import { ModalCar } from '../../Modal/ModalCar/ModalCar';
 
-export const CarCard = ({ carData }) => {
-  const [isfavorite, setIsFavorite] = useState(false);
+export const CarCard = ({ carData, favorite }) => {
+  const [isFavorite, setIsFavorite] = useState(favorite);
   const [openModal, setOpenModal] = useState(false);
 
-  const dispatch = useDispatch();
-
   const {
-    favorite,
     address,
     img,
     make,
@@ -30,15 +27,16 @@ export const CarCard = ({ carData }) => {
     engineSize,
   } = carData;
 
-  const handleAddCarFavotites = () => {
-    if (!isfavorite && !favorite) {
-      setIsFavorite(true);
-      dispatch(addFavoriteCar({ ...carData, favorite: true }));
-      return;
-    }
+  const dispatch = useDispatch();
 
-    dispatch(deleteFavoriteCar(carData.id));
-    setIsFavorite(false);
+  const handleFavorite = () => {
+    setIsFavorite(!isFavorite);
+
+    if (!isFavorite) {
+      dispatch(addFavoriteCar(carData));
+    } else {
+      dispatch(deleteFavoriteCar(carData.id));
+    }
   };
 
   const arr = address.split(',');
@@ -80,12 +78,8 @@ export const CarCard = ({ carData }) => {
           Learn more
         </button>
       </div>
-      <button
-        onClick={handleAddCarFavotites}
-        className="card__icon-btn"
-        type="button"
-      >
-        {isfavorite || favorite ? (
+      <button onClick={handleFavorite} className="card__icon-btn" type="button">
+        {isFavorite ? (
           <FaHeart className="card__icon-heart card__icon-heart-mod" />
         ) : (
           <FaRegHeart className="card__icon-heart" />

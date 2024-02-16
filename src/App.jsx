@@ -8,7 +8,7 @@ import { page } from './redux/car/carSelectors';
 import SharedLayout from './components/SharedLayout/SharedLayout';
 import { Home } from './pages/Home/Home';
 import { CarPark } from './pages/CarPark/CarPark';
-import { Favorites } from './pages/Fovorites/Favorites';
+import { Favorites } from './pages/Favorites/Favorites';
 
 function App() {
   const dispatch = useDispatch();

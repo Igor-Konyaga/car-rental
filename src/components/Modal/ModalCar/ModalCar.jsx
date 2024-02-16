@@ -1,3 +1,4 @@
+import { Button } from '../../Button/Button';
 import { StyledModalCar } from './ModalCar.styled';
 
 export const ModalCar = ({ carData }) => {
@@ -27,10 +28,10 @@ export const ModalCar = ({ carData }) => {
   const city = arrAddress[1];
   const country = arrAddress[2];
 
-  const arrRentalConditionsc = rentalConditions.split('\n');
-  const minimumAge = arrRentalConditionsc[0];
-  const license = arrRentalConditionsc[1];
-  const deposite = arrRentalConditionsc[2];
+  const arrRentalConditions = rentalConditions.split('\n');
+  const minimumAge = arrRentalConditions[0].split(':')[1];
+  const license = arrRentalConditions[1];
+  const deposite = arrRentalConditions[2];
 
   return (
     <StyledModalCar>
@@ -40,12 +41,12 @@ export const ModalCar = ({ carData }) => {
 
       <div className="modal__content">
         <div className="modal__info-header">
-          <p className='modal__title'>
+          <p className="modal__title">
             {make} <span className="modal__accent">{model}</span>,&nbsp;
             <span>{year}</span>
           </p>
 
-          <ul className='modal__info-header-list'>
+          <ul className="modal__info-header-list">
             <li>{city}</li>
             <li>{country}</li>
             <li>id: {id}</li>
@@ -56,10 +57,13 @@ export const ModalCar = ({ carData }) => {
           </ul>
         </div>
 
-        <p>Description: {description}</p>
+        <p className="modal__desc">{description}</p>
 
-        <p>Accessories and functionalities:</p>
-        <ul>
+        <p className="modal__acces-func modal__sub-title">
+          Accessories and functionalities:
+        </p>
+
+        <ul className="modal__list-acces-func ">
           {accessories.map((item) => {
             return <li key={item}>{item}</li>;
           })}
@@ -68,14 +72,34 @@ export const ModalCar = ({ carData }) => {
           })}
         </ul>
 
-        <p>Rental Conditions: </p>
-        <ul>
-          <li>Minimum age: {minimumAge}</li>
-          <li>{license}</li>
-          <li>{deposite}</li>
-          <li>Mileage: {formattedMileage}</li>
-          <li>Price: {rentalPrice}</li>
+        <p className="modal__sub-title modal__sub-title-mod">
+          Rental Conditions:
+        </p>
+        <ul className="modal__list-conditions">
+          <li className="modal__conditions-item">
+            Minimum age:&nbsp;
+            <span className="modal__accent modal__accent-mod">
+              {minimumAge}
+            </span>
+          </li>
+          <li className="modal__conditions-item">{license}</li>
+          <li className="modal__conditions-item">{deposite}</li>
+          <li className="modal__conditions-item">
+            Mileage:&nbsp;
+            <span className="modal__accent modal__accent-mod">
+              {formattedMileage}
+            </span>
+          </li>
+          <li className="modal__conditions-item">
+            Price:&nbsp;
+            <span className="modal__accent modal__accent-mod">
+              {rentalPrice}
+            </span>
+          </li>
         </ul>
+        <button className="modal__btn" type="button">
+          Rental car
+        </button>
       </div>
     </StyledModalCar>
   );
