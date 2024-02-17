@@ -1,6 +1,10 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { StyledCarList } from './CarList.styled';
-import { carsData, favoriteCarsData } from '../../redux/car/carSelectors';
+import {
+  carsData,
+  favoriteCarsData,
+  selectedCar,
+} from '../../redux/car/carSelectors';
 import { setPage } from '../../redux/car/carReducer';
 import { CarCard } from './СarCard/СarCard';
 import { Button } from '../Button/Button';
@@ -10,6 +14,12 @@ export const CarList = () => {
 
   const arrCars = useSelector(carsData);
   const favoriteCars = useSelector(favoriteCarsData);
+  const selectedValue = useSelector(selectedCar);
+
+  const filtrationCars =
+    selectedValue !== 'All cars'
+      ? arrCars.filter((car) => car.make === selectedValue)
+      : arrCars;
 
   const isFavoriteCar = (car) => {
     return favoriteCars.some((favoriteCar) => favoriteCar.id === car.id);
@@ -25,7 +35,7 @@ export const CarList = () => {
     <>
       <StyledCarList>
         {validArr &&
-          arrCars.map((car) => {
+          filtrationCars.map((car) => {
             return (
               <CarCard
                 key={car.id}
@@ -36,7 +46,9 @@ export const CarList = () => {
           })}
       </StyledCarList>
 
-      <Button handleChangePage={handleChangePage}>Load more</Button>
+      {filtrationCars.length >= 12 && (
+        <Button handleChangePage={handleChangePage}>Load more</Button>
+      )}
     </>
   );
 };

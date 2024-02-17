@@ -17,6 +17,7 @@ export const fetchAllCar = createAsyncThunk(
 const INITIAL_STATE = {
   carList: [],
   favoriteCars: [],
+  selectedValue: 'All cars',
   page: 1,
   isLoading: false,
   error: null,
@@ -36,6 +37,9 @@ const carSlice = createSlice({
     },
     setPage(state) {
       state.page = state.page + 1;
+    },
+    setSelectedValue(state, action) {
+      state.selectedValue = action.payload;
     },
   },
   extraReducers: (builder) =>
@@ -57,5 +61,5 @@ const carSlice = createSlice({
 
 export const carReducer = carSlice.reducer;
 
-export const { addFavoriteCar, deleteFavoriteCar, setFavorite, setPage } =
+export const { addFavoriteCar, deleteFavoriteCar, setPage, setSelectedValue } =
   carSlice.actions;

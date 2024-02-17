@@ -13,6 +13,8 @@ import { ModalCar } from '../../Modal/ModalCar/ModalCar';
 export const CarCard = ({ carData, favorite }) => {
   const [isFavorite, setIsFavorite] = useState(favorite);
   const [openModal, setOpenModal] = useState(false);
+  
+  const dispatch = useDispatch();
 
   const {
     address,
@@ -27,7 +29,10 @@ export const CarCard = ({ carData, favorite }) => {
     engineSize,
   } = carData;
 
-  const dispatch = useDispatch();
+  const formattedMileage = mileage
+  .toString()
+  .replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+
 
   const handleFavorite = () => {
     setIsFavorite(!isFavorite);
@@ -65,7 +70,7 @@ export const CarCard = ({ carData, favorite }) => {
               <li>{rentalCompany}</li>
               <li>{type}</li>
               <li>{model}</li>
-              <li>{mileage}</li>
+              <li>{formattedMileage}</li>
               <li>{engineSize}</li>
             </ul>
           </div>
