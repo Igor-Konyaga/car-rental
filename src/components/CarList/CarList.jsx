@@ -1,6 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { StyledCarList } from './CarList.styled';
 import {
+  allCar,
   carsData,
   favoriteCarsData,
   selectedCar,
@@ -13,16 +14,14 @@ export const CarList = () => {
   const dispatch = useDispatch();
 
   const arrCars = useSelector(carsData);
+  const cars = useSelector(allCar);
   const favoriteCars = useSelector(favoriteCarsData);
   const selectedValue = useSelector(selectedCar);
-  console.log('selectedValue: ', selectedValue);
 
   const filtrationCars =
     selectedValue !== 'All cars'
-      ? arrCars.filter((car) => car.make === selectedValue)
+      ? cars.filter((car) => car.make === selectedValue)
       : arrCars;
-
-		console.log(filtrationCars);
 
   const isFavoriteCar = (car) => {
     return favoriteCars.some((favoriteCar) => favoriteCar.id === car.id);
@@ -52,7 +51,9 @@ export const CarList = () => {
       {filtrationCars.length >= 12 && (
         <Button handleChangePage={handleChangePage}>Load more</Button>
       )}
-		{filtrationCars.length === 0 && <p className='car-list__message'>There are no matches</p>}
+      {filtrationCars.length === 0 && (
+        <p className="car-list__message">There are no matches</p>
+      )}
     </>
   );
 };
