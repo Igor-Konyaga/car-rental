@@ -8,4 +8,8 @@ export const StyledCarList = styled.ul`
 
   column-gap: 28px;
   row-gap: 50px;
+
+  .card-list__message{
+	
+  }
 `;

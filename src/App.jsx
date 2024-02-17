@@ -1,6 +1,5 @@
 import { Route, Routes } from 'react-router-dom';
 import { AppContainer, AppWrapper } from './App.styled';
-import { NotFound } from './pages/NotFound/NotFound';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { fetchAllCar } from './redux/car/carReducer';
@@ -26,7 +25,7 @@ function App() {
             <Route index element={<Home />} />
             <Route path="catalog" element={<CarPark />} />
             <Route path="favorites" element={<Favorites />} />
-            <Route path="*" element={<NotFound />} />
+            <Route path="*" element={<Home />} />
           </Route>
         </Routes>
       </AppContainer>

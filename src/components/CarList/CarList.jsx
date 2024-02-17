@@ -15,11 +15,14 @@ export const CarList = () => {
   const arrCars = useSelector(carsData);
   const favoriteCars = useSelector(favoriteCarsData);
   const selectedValue = useSelector(selectedCar);
+  console.log('selectedValue: ', selectedValue);
 
   const filtrationCars =
     selectedValue !== 'All cars'
       ? arrCars.filter((car) => car.make === selectedValue)
       : arrCars;
+
+		console.log(filtrationCars);
 
   const isFavoriteCar = (car) => {
     return favoriteCars.some((favoriteCar) => favoriteCar.id === car.id);
@@ -49,6 +52,7 @@ export const CarList = () => {
       {filtrationCars.length >= 12 && (
         <Button handleChangePage={handleChangePage}>Load more</Button>
       )}
+		{filtrationCars.length === 0 && <p className='car-list__message'>There are no matches</p>}
     </>
   );
 };

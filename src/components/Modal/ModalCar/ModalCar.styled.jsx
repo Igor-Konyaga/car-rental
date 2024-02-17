@@ -146,6 +146,7 @@ export const StyledModalCar = styled.div`
   }
   .modal__btn {
     padding: 12px 50px;
+    max-width: 168px;
 
     display: flex;
     justify-content: center;

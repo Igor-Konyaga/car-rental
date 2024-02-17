@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { Button } from '../../Button/Button';
 import { StyledModalCar } from './ModalCar.styled';
 
@@ -97,9 +98,9 @@ export const ModalCar = ({ carData }) => {
             </span>
           </li>
         </ul>
-        <button className="modal__btn" type="button">
+        <Link to={'tel:+380730000000'} className="modal__btn">
           Rental car
-        </button>
+        </Link>
       </div>
     </StyledModalCar>
   );

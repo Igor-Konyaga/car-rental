@@ -34,6 +34,8 @@ export const StyledFiltration = styled.form`
         color: #121417;
         border-radius: 14px;
 
+        background-color: rgb(247, 247, 251);
+
         cursor: pointer;
 
         font-size: 18px;
@@ -125,7 +127,91 @@ export const StyledFiltration = styled.form`
     }
   }
 
-  .form__car-select--price{
-	min-width: 125px;
+  .form__car-select--price {
+    min-width: 125px;
+  }
+
+  .form__car-diapazon-mileage {
+    display: flex;
+    flex-direction: column;
+    row-gap: 8px;
+
+    align-self: flex-end;
+
+    label {
+      color: #8a8a89;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 1.3;
+    }
+    .wrapper-car-mileage {
+      display: flex;
+
+      .car-mileage {
+        padding: 14px 24px;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        min-width: 160px;
+
+        border-right: 1px solid rgba(138, 138, 137, 0.2);
+        border-radius: 14px 0px 0px 14px;
+        background-color: rgb(247, 247, 251);
+
+        &:last-child {
+          border: none;
+          border-radius: 0px 14px 14px 0px;
+        }
+        .car-mileage-input {
+          max-width: 65px;
+
+          border: none;
+          outline: none;
+          background-color: inherit;
+        }
+		  .car-mileage-input--mod{
+			max-width: 88px;
+
+		  }
+
+        span,
+        .car-mileage-input {
+          color: #121417;
+          font-size: 18px;
+          font-weight: 500;
+          line-height: 1.1;
+        }
+      }
+    }
+  }
+
+  .filtration__btn {
+    padding: 14px;
+    min-width: 136px;
+    max-height: 48px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    align-self: flex-end;
+
+    background-color: #3470ff;
+    color: #fff;
+    border: none;
+    border-radius: 12px;
+    transition: 0.3s;
+
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.4;
+
+    &:hover,
+    &:focus {
+      background-color: #0b44cd;
+      color: #fefacc;
+    }
   }
 `;

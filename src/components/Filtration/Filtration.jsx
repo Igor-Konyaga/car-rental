@@ -45,10 +45,19 @@ export const Filtration = () => {
       }
     };
 
+    const func = (e) => {
+      if (e.target.localName === 'li' || e.target.localName === 'button')
+        return;
+      setIsClick(false);
+      setClickPrice(false);
+    };
+
     document.addEventListener('keydown', handleKeySelect);
+    document.addEventListener('click', func);
 
     return () => {
       document.removeEventListener('keydown', handleKeySelect);
+      document.removeEventListener('click', func);
     };
   }, []);
 
@@ -150,7 +159,27 @@ export const Filtration = () => {
         </div>
       </div>
 
-      <button type="submit">Search</button>
+      <div className="form__car-diapazon-mileage">
+        <label htmlFor="car-mileage">Сar mileage / km</label>
+        <div id="car-mileage" className="wrapper-car-mileage">
+          <div className="car-mileage">
+            <span>From</span>
+            <input className="car-mileage-input" type="text" name="from" />
+          </div>
+          <div className="car-mileage">
+            <span>To</span>
+            <input
+              className="car-mileage-input car-mileage-input--mod"
+              type="text"
+              name="to"
+            />
+          </div>
+        </div>
+      </div>
+
+      <button className="filtration__btn" type="submit">
+        Search
+      </button>
     </StyledFiltration>
   );
 };
