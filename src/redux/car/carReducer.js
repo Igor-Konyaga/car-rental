@@ -1,11 +1,23 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import { allCar } from '../../../services/carApi';
+import { getAllCar, getCars } from '../../../services/carApi';
 
 export const fetchAllCar = createAsyncThunk(
-  'car/getAll',
+  'car/getAllcar',
+  async (_, thunkAPI) => {
+    try {
+      const carList = await getAllCar();
+
+      return carList;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.message);
+    }
+  }
+);
+export const fetchCars = createAsyncThunk(
+  'car/getCars',
   async (page, thunkAPI) => {
     try {
-      const carList = await allCar(page, 12);
+      const carList = await getCars(page, 12);
 
       return carList;
     } catch (error) {
@@ -15,6 +27,7 @@ export const fetchAllCar = createAsyncThunk(
 );
 
 const INITIAL_STATE = {
+  allCar: [],
   carList: [],
   favoriteCars: [],
   selectedValue: 'All cars',
@@ -44,6 +57,19 @@ const carSlice = createSlice({
   },
   extraReducers: (builder) =>
     builder
+      .addCase(fetchCars.pending, (state) => {
+        state.isLoading = true;
+        state.error = null;
+      })
+      .addCase(fetchCars.fulfilled, (state, action) => {
+        state.isLoading = false;
+
+        state.carList = [...state.carList, ...action.payload];
+      })
+      .addCase(fetchCars.rejected, (state, action) => {
+        state.isLoading = false;
+        state.error = action.payload;
+      })
       .addCase(fetchAllCar.pending, (state) => {
         state.isLoading = true;
         state.error = null;
@@ -51,7 +77,7 @@ const carSlice = createSlice({
       .addCase(fetchAllCar.fulfilled, (state, action) => {
         state.isLoading = false;
 
-        state.carList = [...state.carList, ...action.payload];
+        state.allCar = action.payload;
       })
       .addCase(fetchAllCar.rejected, (state, action) => {
         state.isLoading = false;

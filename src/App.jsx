@@ -2,7 +2,7 @@ import { Route, Routes } from 'react-router-dom';
 import { AppContainer, AppWrapper } from './App.styled';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
-import { fetchAllCar } from './redux/car/carReducer';
+import { fetchAllCar, fetchCars } from './redux/car/carReducer';
 import { page } from './redux/car/carSelectors';
 import SharedLayout from './components/SharedLayout/SharedLayout';
 import { Home } from './pages/Home/Home';
@@ -15,7 +15,8 @@ function App() {
   const pageValue = useSelector(page);
 
   useEffect(() => {
-    dispatch(fetchAllCar(pageValue));
+    dispatch(fetchAllCar());
+    dispatch(fetchCars(pageValue));
   }, [dispatch, pageValue]);
   return (
     <AppWrapper>
