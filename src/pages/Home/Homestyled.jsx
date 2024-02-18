@@ -98,7 +98,7 @@ row-gap: 10px;
     .hero__service {
       display: flex;
 		align-items: center;
-      column-gap: 6px;
+      column-gap: 8px;
       .hero__service-icon {
 			width: 20px;
 			height: 20px;

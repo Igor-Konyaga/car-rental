@@ -39,20 +39,21 @@ export const Home = () => {
 		
         <div className="hero__service">
           <MdDone className='hero__service-icon'/>
-			 <p>Service</p>
+			 <p>Rent a car without a driver</p>
         </div>
         <div className="hero__service">
           <MdDone className='hero__service-icon'/>
-			 <p>Service</p>
+			 <p>Rent a car with a driver</p>
         </div>
         <div className="hero__service">
           <MdDone className='hero__service-icon'/>
-			 <p>Service</p>
+			 <p>Delivery and return of the car</p>
         </div>
         <div className="hero__service">
           <MdDone className='hero__service-icon'/>
-			 <p>Service</p>
+			 <p>Support</p>
         </div>
+       
       </div>
     </StyledHome>
   );
