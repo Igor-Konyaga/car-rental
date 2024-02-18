@@ -1,14 +1,10 @@
 import styled from 'styled-components';
 
-export const AppWrapper = styled.div`
-  width: 100%;
-  height: 100vh;
-`;
-
 export const AppContainer = styled.div`
-  padding: 0 15px;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 
-  width: 1250px;
 
   margin: 0 auto;
 `;

@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 export const StyledBtn = styled.button`
   margin: ${({ center }) => (center ? '0 auto' : '')};
+  margin-bottom: 100px;
 
   font-weight: 500;
 

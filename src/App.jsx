@@ -1,5 +1,5 @@
 import { Route, Routes } from 'react-router-dom';
-import { AppContainer, AppWrapper } from './App.styled';
+import { AppContainer } from './App.styled';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { fetchAllCar, fetchCars } from './redux/car/carReducer';
@@ -19,18 +19,16 @@ function App() {
     dispatch(fetchCars(pageValue));
   }, [dispatch, pageValue]);
   return (
-    <AppWrapper>
-      <AppContainer>
-        <Routes>
-          <Route path="/" element={<SharedLayout />}>
-            <Route index element={<Home />} />
-            <Route path="catalog" element={<CarPark />} />
-            <Route path="favorites" element={<Favorites />} />
-            <Route path="*" element={<Home />} />
-          </Route>
-        </Routes>
-      </AppContainer>
-    </AppWrapper>
+    <AppContainer>
+      <Routes>
+        <Route path="/" element={<SharedLayout />}>
+          <Route index element={<Home />} />
+          <Route path="catalog" element={<CarPark />} />
+          <Route path="favorites" element={<Favorites />} />
+          <Route path="*" element={<Home />} />
+        </Route>
+      </Routes>
+    </AppContainer>
   );
 }
 export default App;

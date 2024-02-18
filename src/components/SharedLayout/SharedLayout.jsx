@@ -2,6 +2,7 @@ import { Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
 import { Header } from 'components/Header/Header';
 import { TailSpin } from 'react-loader-spinner';
+import { Footer } from '../Footer/Footer';
 
 const SharedLayout = () => {
   return (
@@ -23,6 +24,7 @@ const SharedLayout = () => {
       >
         <Outlet />
       </Suspense>
+      <Footer />
     </>
   );
 };

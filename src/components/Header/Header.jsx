@@ -5,8 +5,10 @@ import { Navigation } from './Navigation/Navigation';
 export const Header = () => {
   return (
     <StyledHeader>
-      <Logo />
-      <Navigation />
+      <div className='warraper-nav'>
+        <Logo />
+        <Navigation />
+      </div>
     </StyledHeader>
   );
 };

@@ -1,7 +1,13 @@
 import styled from 'styled-components';
 
 export const StyledHome = styled.section`
-  padding: 30px 36px 0;
+  padding-top: 30px;
+  align-self: center;
+
+  width: 100%;
+  max-width: 1250px;
+
+  flex: 1;
 
   .hero__title {
     margin-bottom: 40px;
@@ -77,12 +83,13 @@ export const StyledHome = styled.section`
   }
 
   .hero__services {
-display: flex;
-flex-direction: column;
-row-gap: 10px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
 
     max-width: 800px;
     margin: 0 auto;
+    margin-bottom: 70px;
 
     h2 {
       padding-bottom: 16px;
@@ -97,17 +104,17 @@ row-gap: 10px;
 
     .hero__service {
       display: flex;
-		align-items: center;
+      align-items: center;
       column-gap: 8px;
       .hero__service-icon {
-			width: 20px;
-			height: 20px;
+        width: 20px;
+        height: 20px;
       }
     }
 
     p {
-		font-size: 20px;
-		font-weight: 500;
+      font-size: 20px;
+      font-weight: 500;
     }
   }
 `;

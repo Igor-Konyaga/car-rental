@@ -4,11 +4,13 @@ export const StyledHeader = styled.header`
   padding: 0 36px;
   position: relative;
   z-index: 1;
+  width: 100%;
+  align-self: center;
 
   display: flex;
+  justify-content: center;
   align-items: center;
 
-  /* background-color: #02428b; */
   background-color: rgb(36, 39, 40);
   background-image: linear-gradient(
     90deg,
@@ -16,8 +18,13 @@ export const StyledHeader = styled.header`
     rgba(2, 66, 139, 1) 75%
   );
 
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
-
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+  .warraper-nav {
+    display: flex;
+    justify-content: space-between;
+
+    width: 100%;
+    max-width: 1250px;
+  }
 `;

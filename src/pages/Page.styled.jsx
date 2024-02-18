@@ -1,11 +1,16 @@
 import styled from 'styled-components';
 
 export const StyledPage = styled.section`
+  padding-top: 30px;
+
   display: flex;
   flex-direction: column;
+  align-self: center;
 
-  padding-top: 30px;
-  padding-bottom: 50px;
+  width: 100%;
+  flex: 1;
+
+  max-width: 1250px;
 
   .car-list__message {
     position: fixed;
@@ -22,7 +27,8 @@ export const StyledPage = styled.section`
 
     color: #02428b;
 
-	 text-shadow: 2px 7px 5px rgba(0,0,0,0.3), 
-    0px -4px 10px rgba(255,255,255,0.3);
+    text-shadow:
+      2px 7px 5px rgba(0, 0, 0, 0.3),
+      0px -4px 10px rgba(255, 255, 255, 0.3);
   }
 `;
