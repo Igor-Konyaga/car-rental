@@ -3,3 +3,4 @@ export const favoriteCarsData = (state) => state.car.favoriteCars;
 export const page = (state) => state.car.page;
 export const selectedCar= (state) => state.car.selectedValue;
 export const allCarData= (state) => state.car.allCar;
+export const loading= (state) => state.car.isLoading;
