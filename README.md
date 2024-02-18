@@ -35,4 +35,5 @@ The following technologies were used to develop this site:
 3) JavaScript
 4) React
 5) Redux Toolkit
-6) Mockapi
+6) Axios
+7) Mockapi
