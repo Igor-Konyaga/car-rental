@@ -68,26 +68,27 @@ export const StyledFiltration = styled.form`
         position: absolute;
       }
 
-      .form__select-list {
+      .form__wrapper-select-list {
         position: absolute;
         top: 53px;
         left: 0;
-
-        display: flex;
-        flex-direction: column;
-
-        padding: 14px 18px;
-
+        padding: 14px 8px 14px 18px;
         width: 100%;
-        max-height: 272px;
 
         border: 1px solid rgba(18, 20, 23, 0.08);
         border-radius: 14px;
         box-shadow: 0px 4px 36px 0px rgba(0, 0, 0, 0.02);
         background-color: rgb(255, 255, 255);
+        z-index: 1;
+      }
+
+      .form__select-list {
+        display: flex;
+        flex-direction: column;
+
+        max-height: 272px;
 
         overflow-y: scroll;
-        z-index: 1;
 
         color: rgba(18, 20, 23, 0.2);
         font-size: 16px;
@@ -96,10 +97,6 @@ export const StyledFiltration = styled.form`
 
         &::-webkit-scrollbar {
           width: 8px;
-        }
-
-        &::-webkit-scrollbar-track {
-          margin: 14px 0;
         }
 
         &::-webkit-scrollbar-thumb {
@@ -171,10 +168,9 @@ export const StyledFiltration = styled.form`
           outline: none;
           background-color: inherit;
         }
-		  .car-mileage-input--mod{
-			max-width: 88px;
-
-		  }
+        .car-mileage-input--mod {
+          max-width: 88px;
+        }
 
         span,
         .car-mileage-input {

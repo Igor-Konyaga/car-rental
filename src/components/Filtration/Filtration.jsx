@@ -45,7 +45,7 @@ export const Filtration = () => {
       }
     };
 
-    const func = (e) => {
+    const handelClick = (e) => {
       if (e.target.localName === 'li' || e.target.localName === 'button')
         return;
       setIsClick(false);
@@ -53,11 +53,11 @@ export const Filtration = () => {
     };
 
     document.addEventListener('keydown', handleKeySelect);
-    document.addEventListener('click', func);
+    document.addEventListener('click', handelClick);
 
     return () => {
       document.removeEventListener('keydown', handleKeySelect);
-      document.removeEventListener('click', func);
+      document.removeEventListener('click', handelClick);
     };
   }, []);
 
@@ -78,30 +78,32 @@ export const Filtration = () => {
           <input defaultValue={selectedCar} name="selectValue" type="text" />
 
           {isClick && (
-            <ul onClick={handleClickItem} className="form__select-list">
-              <li data-value="All cars">All cars</li>
-              <li data-value="Buick">Buick</li>
-              <li data-value="Volvo">Volvo</li>
-              <li data-value="HUMMER">HUMMER</li>
-              <li data-value="Subaru">Subaru</li>
-              <li data-value="Mitsubishi">Mitsubishi</li>
-              <li data-value="Nissan">Nissan</li>
-              <li data-value="Lincoln">Lincoln</li>
-              <li data-value="GMC">GMC</li>
-              <li data-value="Hyundai">Hyundai</li>
-              <li data-value="MINI">MINI</li>
-              <li data-value="Bentley">Bentley</li>
-              <li data-value="Mercedes-Benz">Mercedes-Benz</li>
-              <li data-value="Aston Martin">Aston Martin</li>
-              <li data-value="Pontiac">Pontiac</li>
-              <li data-value="Lamborghini">Lamborghini</li>
-              <li data-value="Audi">Audi</li>
-              <li data-value="BMW">BMW</li>
-              <li data-value="Chevrolet">Chevrolet</li>
-              <li data-value="Chrysler">Chrysler</li>
-              <li data-value="Kia">Kia</li>
-              <li data-value="Land">Land</li>
-            </ul>
+            <div className="form__wrapper-select-list">
+              <ul onClick={handleClickItem} className="form__select-list">
+                <li data-value="All cars">All cars</li>
+                <li data-value="Buick">Buick</li>
+                <li data-value="Volvo">Volvo</li>
+                <li data-value="HUMMER">HUMMER</li>
+                <li data-value="Subaru">Subaru</li>
+                <li data-value="Mitsubishi">Mitsubishi</li>
+                <li data-value="Nissan">Nissan</li>
+                <li data-value="Lincoln">Lincoln</li>
+                <li data-value="GMC">GMC</li>
+                <li data-value="Hyundai">Hyundai</li>
+                <li data-value="MINI">MINI</li>
+                <li data-value="Bentley">Bentley</li>
+                <li data-value="Mercedes-Benz">Mercedes-Benz</li>
+                <li data-value="Aston Martin">Aston Martin</li>
+                <li data-value="Pontiac">Pontiac</li>
+                <li data-value="Lamborghini">Lamborghini</li>
+                <li data-value="Audi">Audi</li>
+                <li data-value="BMW">BMW</li>
+                <li data-value="Chevrolet">Chevrolet</li>
+                <li data-value="Chrysler">Chrysler</li>
+                <li data-value="Kia">Kia</li>
+                <li data-value="Land">Land</li>
+              </ul>
+            </div>
           )}
 
           {isClick ? (
@@ -127,28 +129,30 @@ export const Filtration = () => {
           <input defaultValue={selectedCar} name="selectValue" type="text" />
 
           {clickPrice && (
-            <ul onClick={handleClickItemPrice} className="form__select-list">
-              <li data-value="10">10</li>
-              <li data-value="20">20</li>
-              <li data-value="30">30</li>
-              <li data-value="40">40</li>
-              <li data-value="50">50</li>
-              <li data-value="60">60</li>
-              <li data-value="70">70</li>
-              <li data-value="80">80</li>
-              <li data-value="90">90</li>
-              <li data-value="100">100</li>
-              <li data-value="110">110</li>
-              <li data-value="120">120</li>
-              <li data-value="130">130</li>
-              <li data-value="140">140</li>
-              <li data-value="150">150</li>
-              <li data-value="160">160</li>
-              <li data-value="170">170</li>
-              <li data-value="180">180</li>
-              <li data-value="190">190</li>
-              <li data-value="200">200</li>
-            </ul>
+            <div className="form__wrapper-select-list">
+              <ul onClick={handleClickItemPrice} className="form__select-list">
+                <li data-value="10">10</li>
+                <li data-value="20">20</li>
+                <li data-value="30">30</li>
+                <li data-value="40">40</li>
+                <li data-value="50">50</li>
+                <li data-value="60">60</li>
+                <li data-value="70">70</li>
+                <li data-value="80">80</li>
+                <li data-value="90">90</li>
+                <li data-value="100">100</li>
+                <li data-value="110">110</li>
+                <li data-value="120">120</li>
+                <li data-value="130">130</li>
+                <li data-value="140">140</li>
+                <li data-value="150">150</li>
+                <li data-value="160">160</li>
+                <li data-value="170">170</li>
+                <li data-value="180">180</li>
+                <li data-value="190">190</li>
+                <li data-value="200">200</li>
+              </ul>
+            </div>
           )}
 
           {clickPrice ? (
