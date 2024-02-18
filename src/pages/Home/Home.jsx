@@ -2,7 +2,9 @@ import { StyledHome } from './Homestyled';
 import { IoMdTime } from 'react-icons/io';
 import { FaCar } from 'react-icons/fa6';
 import { GrDocumentTime } from 'react-icons/gr';
-import { RiMoneyDollarCircleLine } from "react-icons/ri";
+import { RiMoneyDollarCircleLine } from 'react-icons/ri';
+import { MdDone } from 'react-icons/md';
+
 export const Home = () => {
   return (
     <StyledHome>
@@ -29,6 +31,27 @@ export const Home = () => {
         <div className="hero__advantage">
           <RiMoneyDollarCircleLine className="hero__advantage-icon icon-price" />
           <p>Affordable prices</p>
+        </div>
+      </div>
+
+      <div className="hero__services">
+        <h2>OUR SERVICES</h2>
+		
+        <div className="hero__service">
+          <MdDone className='hero__service-icon'/>
+			 <p>Service</p>
+        </div>
+        <div className="hero__service">
+          <MdDone className='hero__service-icon'/>
+			 <p>Service</p>
+        </div>
+        <div className="hero__service">
+          <MdDone className='hero__service-icon'/>
+			 <p>Service</p>
+        </div>
+        <div className="hero__service">
+          <MdDone className='hero__service-icon'/>
+			 <p>Service</p>
         </div>
       </div>
     </StyledHome>

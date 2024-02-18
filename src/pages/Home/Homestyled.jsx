@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 
 export const StyledHome = styled.section`
-  padding: 50px 36px;
+  padding: 30px 36px 0;
 
   .hero__title {
-    margin-bottom: 44px;
+    margin-bottom: 40px;
 
     display: flex;
     flex-direction: column;
@@ -21,10 +21,10 @@ export const StyledHome = styled.section`
       color: #003571;
     }
   }
-  /* rgba(2, 66, 139, 0.2) */
 
   .hero__advantages {
     padding: 40px;
+    margin-bottom: 30px;
 
     display: flex;
     align-items: center;
@@ -73,6 +73,41 @@ export const StyledHome = styled.section`
           transition: all 0.3s;
         }
       }
+    }
+  }
+
+  .hero__services {
+display: flex;
+flex-direction: column;
+row-gap: 10px;
+
+    max-width: 800px;
+    margin: 0 auto;
+
+    h2 {
+      padding-bottom: 16px;
+
+      border-bottom: 2px solid #f8a91b;
+
+      font-size: 30px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-align: center;
+    }
+
+    .hero__service {
+      display: flex;
+		align-items: center;
+      column-gap: 6px;
+      .hero__service-icon {
+			width: 20px;
+			height: 20px;
+      }
+    }
+
+    p {
+		font-size: 20px;
+		font-weight: 500;
     }
   }
 `;
