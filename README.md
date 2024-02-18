@@ -27,3 +27,12 @@ number will open.
 3. Favorites page ( This page stores the cars the user chose as favorites).
 
 ![FavoritesPage](./src/assets/Favorites.png)
+
+
+The following technologies were used to develop this site:
+1) HTML
+2) CSS
+3) JavaScript
+4) React
+5) Redux Toolkit
+6) Mockapi
