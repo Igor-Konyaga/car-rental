@@ -12,7 +12,9 @@ This site consists of three pages:
 2. Catalog page (On this page, you can view all the cars available for rent.
    There is also filtering of cars by brand, price per hour, and mileage. When
    the user clicks on heart, the car is added to the list of favorites, which
-   can be viewed on the favorites page).
+   can be viewed on the favorites page. Pagination is also implemented here.
+   First, twelve cars are shown. When you click on the load more button, twelve
+   more are added).
 
 ![CatalogPage](./src/assets/Catalog.png)
 
