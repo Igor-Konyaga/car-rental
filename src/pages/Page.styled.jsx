@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const StyledPage = styled.div`
+export const StyledPage = styled.section`
   display: flex;
   flex-direction: column;
 

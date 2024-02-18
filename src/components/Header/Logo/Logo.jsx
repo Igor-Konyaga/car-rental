@@ -4,7 +4,7 @@ export const Logo = () => {
   return (
     <StyledLogoLink to={'/'}>
       <IconCar className="logo-icon" />
-      <p className="logo-title">car rental</p>
+      <p className="logo-title">Drive Scape</p>
     </StyledLogoLink>
   );
 };
