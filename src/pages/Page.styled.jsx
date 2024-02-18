@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const StyledPage = styled.section`
-  padding-top: 30px;
+  padding: 30px 15px 0;
 
   display: flex;
   flex-direction: column;

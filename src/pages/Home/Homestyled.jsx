@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const StyledHome = styled.section`
-  padding-top: 30px;
+  padding: 30px 15px 0;
   align-self: center;
 
   width: 100%;

@@ -23,6 +23,8 @@ export const StyledHeader = styled.header`
     display: flex;
     justify-content: space-between;
 
+	 padding: 0 15px;
+
     width: 100%;
     max-width: 1250px;
   }
