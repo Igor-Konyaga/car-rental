@@ -19,3 +19,8 @@ car. To contact the company, click on the rental car button, then the phone
 number will open.
 
 ![Modal](./src/assets/Modal.png)
+
+2. Favorites page ( This page stores the cars that the user chose as
+   favorites).
+
+![FavoritesPage](./src/assets/Favorites.png)
