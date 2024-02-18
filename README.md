@@ -8,3 +8,8 @@ This site consists of three pages:
 1. Home page (This page describes the company's benefits and services).
 
 ![HomePage](./src/assets/Home.png)
+
+
+2. Catalog page (This page describes the company's benefits and services).
+
+![CatalogPage](./src/assets/Catalog.png)
