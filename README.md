@@ -9,8 +9,10 @@ This site consists of three pages:
 
 ![HomePage](./src/assets/Home.png)
 
-2. Catalog page ( On this page you can view all cars that can be rented. You can
-   also filter cars by make, price per hour and mileage.).
+2. Catalog page (On this page, you can view all the cars available for rent.
+   There is also filtering of cars by brand, price per hour, and mileage. When
+   the user clicks on heart, the car is added to the list of favorites, which
+   can be viewed on the favorites page).
 
 ![CatalogPage](./src/assets/Catalog.png)
 
@@ -20,7 +22,6 @@ number will open.
 
 ![Modal](./src/assets/Modal.png)
 
-2. Favorites page ( This page stores the cars that the user chose as
-   favorites).
+3. Favorites page ( This page stores the cars that the user chose as favorites).
 
 ![FavoritesPage](./src/assets/Favorites.png)
