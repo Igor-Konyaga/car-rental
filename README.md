@@ -22,6 +22,6 @@ number will open.
 
 ![Modal](./src/assets/Modal.png)
 
-3. Favorites page ( This page stores the cars that the user chose as favorites).
+3. Favorites page ( This page stores the cars the user chose as favorites).
 
 ![FavoritesPage](./src/assets/Favorites.png)
