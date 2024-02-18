@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 export const StyledHeader = styled.header`
-  padding: 0 36px;
   position: relative;
   z-index: 1;
   width: 100%;
