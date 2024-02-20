@@ -91,11 +91,9 @@ export const CarCard = ({ carData, favorite }) => {
         )}
       </button>
 
-      {openModal && (
         <Modal openModal={openModal} setOpenModal={setOpenModal}>
           <ModalCar carData={carData} />
         </Modal>
-      )}
     </StyledCard>
   );
 };

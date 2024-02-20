@@ -27,8 +27,8 @@ export const Modal = ({ children, openModal, setOpenModal }) => {
     };
   }, [setOpenModal, openModal]);
   return (
-    <StyledModal onClick={handleModal}>
-      <div className="modal__body">
+    <StyledModal className={openModal && 'active'}   onClick={handleModal}>
+      <div className={openModal ? 'modal__body active' : 'modal__body'}>
         {children}
         <button
           onClick={() => setOpenModal(false)}

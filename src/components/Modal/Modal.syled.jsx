@@ -17,6 +17,16 @@ export const StyledModal = styled.div`
 
   overflow-y: auto;
 
+  opacity: 0;
+  pointer-events: none;
+  transition: all 1s;
+
+  &.active {
+    opacity: 1;
+    pointer-events: fill;
+    transition: all 1s;
+  }
+
   z-index: 1;
   background-color: rgba(18, 20, 23, 0.5);
 
@@ -24,10 +34,19 @@ export const StyledModal = styled.div`
     padding: 40px;
     position: relative;
 
+    transform: rotate(0deg) scale(0);
+    transition: all 0.7s;
+
     overflow-y: auto;
 
     border-radius: 24px;
     background-color: white;
+
+    &.active {
+      transform: rotate(1080deg) scale(1);
+
+      transition: all 0.7s;
+    }
 
     .modal__close-btn {
       position: absolute;
