@@ -290,6 +290,13 @@ to {
     letter-spacing: 1.2px;
     font-weight: 800;
 
+    transition: all 0.3s;
+
+    :hover {
+      filter: contrast(130%);
+      transition: all 0.3s;
+    }
+
     .hero__sub-title {
       color: #f8a91b;
     }
